@@ -1,78 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import PaintBrushDivider from './PaintBrushDivider';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function WhyChooseUsSection({ onOpenEnquiry, onSelectImage }) {
-  const sectionRef = useRef(null);
-  const headerRef = useRef(null);
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Header Animation
-      gsap.fromTo(
-        headerRef.current ? headerRef.current.children : [],
-        { x: 50, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      // Card & items animation
-      if (cardRef.current) {
-        gsap.fromTo(
-          cardRef.current,
-          { y: 50, opacity: 0, scale: 0.96 },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: cardRef.current,
-              start: "top 85%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-
-        gsap.fromTo(
-          cardRef.current.children,
-          { y: 30, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            stagger: 0.15,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: cardRef.current,
-              start: "top 85%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="relative z-0 bg-slate-900 text-slate-900 overflow-hidden pt-16 md:pt-24">
+    <section className="relative z-0 bg-slate-900 text-slate-900 overflow-hidden pt-16 md:pt-24">
 
       {/* Background Beachfront Villa Image (.lenticular-castoff-1 / _52-1) */}
       <div
@@ -86,7 +17,7 @@ export default function WhyChooseUsSection({ onOpenEnquiry, onSelectImage }) {
       <div className="max-w-[1728px] mx-auto px-4 md:px-16 relative z-10 py-12 md:py-20">
 
         {/* Right Header Area matching Figma (.why-choose-us & .a-serene-escape...) */}
-        <div ref={headerRef} className="flex flex-col items-end text-right mb-10 md:mb-10 space-y-2">
+        <div className="flex flex-col items-end text-right mb-10 md:mb-10 space-y-2">
 
           <div className="font-poppins text-[15px] font-medium text-[#132742] tracking-wide  px-4 py-1 rounded-full ">
             Why Choose Us
@@ -107,7 +38,7 @@ export default function WhyChooseUsSection({ onOpenEnquiry, onSelectImage }) {
           </div>
 
           <div className="lg:col-span-8 flex justify-end">
-            <div ref={cardRef} className="figma-caption-card w-full max-w-[732px] p-6 sm:p-10 space-y-6 relative z-20 border border-white/50">
+            <div className="figma-caption-card w-full max-w-[732px] p-6 sm:p-10 space-y-6 relative z-20 border border-white/50">
 
               {/* Item 1: Peaceful Natural Setting */}
               <div className="space-y-1">

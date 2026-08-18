@@ -1,8 +1,4 @@
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import React from "react";
 
 const rooms = [
     {
@@ -29,60 +25,11 @@ const rooms = [
 ];
 
 const RoomTypes = () => {
-    const sectionRef = useRef(null);
-    const headerRef = useRef(null);
-    const roomsGridRef = useRef(null);
-
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            if (headerRef.current) {
-                gsap.fromTo(
-                    headerRef.current.children,
-                    { y: 35, opacity: 0 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 0.8,
-                        stagger: 0.15,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: sectionRef.current,
-                            start: "top 75%",
-                            toggleActions: "play none none none",
-                        },
-                    }
-                );
-            }
-
-            if (roomsGridRef.current) {
-                gsap.fromTo(
-                    roomsGridRef.current.children,
-                    { y: 50, opacity: 0, scale: 0.96 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        scale: 1,
-                        duration: 0.9,
-                        stagger: 0.18,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: roomsGridRef.current,
-                            start: "top 80%",
-                            toggleActions: "play none none none",
-                        },
-                    }
-                );
-            }
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, []);
-
     return (
-        <section ref={sectionRef} className="w-full bg-white py-16 sm:py-20 lg:py-24">
+        <section className="w-full bg-white py-16 sm:py-20 lg:py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Heading */}
-                <div ref={headerRef} className="flex flex-col items-center text-center">
+                <div className="flex flex-col items-center text-center">
                     <h2 className="font-bold uppercase text-[#132742] text-3xl sm:text-4xl lg:text-5xl leading-tight lg:leading-[58px] tracking-tight">
                         Recommended Room Types
                     </h2>
@@ -94,7 +41,7 @@ const RoomTypes = () => {
                 </div>
 
                 {/* Room Cards */}
-                <div ref={roomsGridRef} className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+                <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
                     {rooms.map((room) => (
                         <div
                             key={room.id}

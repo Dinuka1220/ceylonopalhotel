@@ -1,64 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { Award, Clock, HeartHandshake } from 'lucide-react';
 import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from './SocialIcons';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutUsSection({ onOpenEnquiry, onSelectImage }) {
-  const sectionRef = useRef(null);
-  const leftColRef = useRef(null);
-  const rightColRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Left text column stagger animation
-      if (leftColRef.current) {
-        gsap.fromTo(
-          leftColRef.current.children,
-          { y: 40, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 75%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
-
-      // Right circular image animation
-      if (rightColRef.current) {
-        gsap.fromTo(
-          rightColRef.current,
-          { scale: 0.85, opacity: 0, rotation: -4 },
-          {
-            scale: 1,
-            opacity: 1,
-            rotation: 0,
-            duration: 1.1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 75%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} id="about" className="relative z-20 bg-white pt-16 pb-16 md:pt-15 md:pb-24">
+    <section id="about" className="relative z-20 bg-white pt-16 pb-16 md:pt-15 md:pb-24">
 
       {/* Bottom Layer: Bottom Brush Image */}
       <div className="absolute bottom-0 translate-y-1/2 left-0 right-0 z-0 pointer-events-none w-full">
@@ -82,7 +28,7 @@ export default function AboutUsSection({ onOpenEnquiry, onSelectImage }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* LEFT COLUMN: About Text & Story */}
-          <div ref={leftColRef} className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-6">
 
             {/* Tagline */}
             <div>
@@ -103,6 +49,8 @@ export default function AboutUsSection({ onOpenEnquiry, onSelectImage }) {
               </p>
 
             </div>
+
+
 
             {/* Bottom Row: Social Icons & Action Button */}
             <div className="pt-4 flex flex-wrap items-center justify-between gap-4">
@@ -138,6 +86,7 @@ export default function AboutUsSection({ onOpenEnquiry, onSelectImage }) {
                 </a>
               </div>
 
+
             </div>
 
           </div>
@@ -145,7 +94,7 @@ export default function AboutUsSection({ onOpenEnquiry, onSelectImage }) {
           {/* RIGHT COLUMN: Overlapping Circular Collage */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
 
-            <div ref={rightColRef} className="relative w-full max-w-[480px] aspect-square">
+            <div className="relative w-full max-w-[480px] aspect-square">
 
               {/* Bottom Left Circular Image */}
               <div>

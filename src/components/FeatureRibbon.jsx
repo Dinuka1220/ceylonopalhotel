@@ -1,9 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { UtensilsCrossed, Waves, PackageCheck, BedDouble, Sun } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ribbonItems = [
   { icon: UtensilsCrossed, label: 'Dining Experience' },
@@ -14,51 +10,8 @@ const ribbonItems = [
 ];
 
 export default function FeatureRibbon() {
-  const ribbonRef = useRef(null);
-  const goldRibbonRef = useRef(null);
-  const navyRibbonRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        goldRibbonRef.current,
-        { x: "-10%", opacity: 0 },
-        {
-          x: "0%",
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ribbonRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        navyRibbonRef.current,
-        { x: "10%", opacity: 0 },
-        {
-          x: "0%",
-          opacity: 1,
-          duration: 1,
-          delay: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ribbonRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    }, ribbonRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <div ref={ribbonRef} className="relative z-30 -mt-16 sm:-mt-20 md:-mt-24 -mb-8 sm:-mb-10 md:-mb-12 font-['Inter'] select-none overflow-hidden">
+    <div className="absolute z-30 -mt-16 sm:-mt-20 md:-mt-[8rem] -mb-8 sm:-mb-10 md:-mb-12 font-['Inter'] select-none ">
       <style>{`
         @keyframes marquee-left {
           0% { transform: translateX(0%); }
@@ -86,7 +39,6 @@ export default function FeatureRibbon() {
 
       {/* ── 1. TOP GOLD ANGLED RIBBON (Auto-slides to Left) ── */}
       <div
-        ref={goldRibbonRef}
         className="bg-[#b08f5a] text-[#132742] h-[55px] sm:h-[65px] md:h-[75px]
                    flex items-center shadow-lg w-[110vw] -ml-[7vw]
                    transform -rotate-[3.5deg] origin-top-right overflow-hidden relative z-10 "
@@ -107,11 +59,10 @@ export default function FeatureRibbon() {
 
       {/* ── 2. BOTTOM NAVY ANGLED RIBBON (Auto-slides to Right) ── */}
       <div
-        ref={navyRibbonRef}
         className="bg-[#0e1e31] text-white h-[55px] sm:h-[65px] md:h-[75px]
                    flex items-center shadow-2xl w-[115vw] -ml-[7vw]
-                   transform rotate-[1.8deg] origin-top-left overflow-hidden
-                   -mt-4 sm:-mt-5 border-t border-b border-white/10 relative z-20"
+                   transform rotate-[5deg] origin-top-left overflow-hidden
+                   -mt-4 sm:-mt-[6rem] border-t border-b border-white/10 relative z-20"
       >
         <div className="animate-marquee-right flex items-center gap-8 sm:gap-12 md:gap-16">
           {[...ribbonItems, ...ribbonItems, ...ribbonItems, ...ribbonItems].map((item, idx) => {

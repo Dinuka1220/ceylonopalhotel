@@ -1,9 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Play } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 /**
  * GallerySection
@@ -35,7 +31,7 @@ const defaultImages = {
 function GalleryImage({ src, alt, className = "", flip = false }) {
     return (
         <div
-            className={`gallery-item group relative h-full w-full overflow-hidden rounded-lg bg-slate-100 ${className}`}
+            className={`group relative h-full w-full overflow-hidden rounded-lg bg-slate-100 ${className}`}
         >
             <img
                 src={src}
@@ -50,7 +46,7 @@ function GalleryImage({ src, alt, className = "", flip = false }) {
 
 function VideoThumb({ src, alt }) {
     return (
-        <div className="gallery-item group relative h-full w-full cursor-pointer overflow-hidden rounded-lg bg-slate-100">
+        <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-lg bg-slate-100">
             <img
                 src={src}
                 alt={alt}
@@ -68,60 +64,11 @@ function VideoThumb({ src, alt }) {
 
 export default function GallerySection({ images = defaultImages }) {
     const img = { ...defaultImages, ...images };
-    const sectionRef = useRef(null);
-    const headerRef = useRef(null);
-    const gridRef = useRef(null);
-
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            if (headerRef.current) {
-                gsap.fromTo(
-                    headerRef.current.children,
-                    { y: 30, opacity: 0 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 0.8,
-                        stagger: 0.15,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: sectionRef.current,
-                            start: "top 75%",
-                            toggleActions: "play none none none",
-                        },
-                    }
-                );
-            }
-
-            if (gridRef.current) {
-                const items = gridRef.current.querySelectorAll(".gallery-item");
-                gsap.fromTo(
-                    items,
-                    { y: 40, opacity: 0, scale: 0.95 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        scale: 1,
-                        duration: 0.7,
-                        stagger: 0.08,
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: gridRef.current,
-                            start: "top 80%",
-                            toggleActions: "play none none none",
-                        },
-                    }
-                );
-            }
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, []);
 
     return (
-        <section ref={sectionRef} className="relative w-full overflow-hidden bg-[#CFC6AA] px-4 py-14 sm:px-8 sm:py-16 lg:px-16 lg:py-20">
+        <section className="relative w-full overflow-hidden bg-[#CFC6AA] px-4 py-14 sm:px-8 sm:py-16 lg:px-16 lg:py-20">
             {/* Heading */}
-            <div ref={headerRef} className="mx-auto mb-10 max-w-2xl text-center sm:mb-14 lg:mb-16">
+            <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-14 lg:mb-16">
                 <h2 className="font-['Urbanist',_sans-serif] text-3xl font-bold uppercase leading-tight tracking-tight text-[#132742] sm:text-4xl lg:text-5xl">
                     Gallery
                 </h2>
@@ -131,7 +78,7 @@ export default function GallerySection({ images = defaultImages }) {
             </div>
 
             {/* Content */}
-            <div ref={gridRef} className="mx-auto flex max-w-7xl flex-col gap-4 sm:gap-5 lg:gap-6">
+            <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:gap-5 lg:gap-6">
                 {/* Top bento block: hero + 2x2 small pairs */}
                 <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
                     {/* Hero image spans 2 cols x 2 rows on tablet+ */}

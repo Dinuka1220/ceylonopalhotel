@@ -1,43 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Phone, Mail, Menu, X } from "lucide-react";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "./SocialIcons";
-import gsap from "gsap";
 
 export default function Header({ onOpenEnquiry }) {
   const [open, setOpen] = useState(false);
-  const headerRef = useRef(null);
-  const topBarRef = useRef(null);
-  const navBarRef = useRef(null);
-  const logoRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-      tl.fromTo(
-        topBarRef.current,
-        { y: -30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7 }
-      )
-        .fromTo(
-          navBarRef.current,
-          { y: -20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.7 },
-          "-=0.4"
-        )
-        .fromTo(
-          logoRef.current,
-          { y: -50, opacity: 0, scale: 0.9 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.4)" },
-          "-=0.5"
-        );
-    }, headerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <header ref={headerRef} className="absolute top-0 left-0 w-full z-40 font-sans">
+    <header className="absolute top-0 left-0 w-full z-40 font-sans">
 
       {/*
         Wrap both bars in one relative container so the logo badge
@@ -47,7 +16,7 @@ export default function Header({ onOpenEnquiry }) {
       <div className="relative w-full">
 
         {/* ── NAVY TOP INFO BAR ── */}
-        <div ref={topBarRef} className="h-[47px] w-full bg-[#0e1e31] flex items-center px-4 md:px-16">
+        <div className="h-[47px] w-full bg-[#0e1e31] flex items-center px-4 md:px-16">
           <div className="max-w-[1728px] w-full mx-auto flex items-center justify-between">
 
             {/* Left: Phone + Email */}
@@ -80,7 +49,7 @@ export default function Header({ onOpenEnquiry }) {
         </div>
 
         {/* ── WHITE NAV BAR ── */}
-        <div ref={navBarRef} className="w-full bg-transparent  h-20 md:h-24 flex items-center">
+        <div className="w-full bg-transparent  h-20 md:h-24 flex items-center">
           <div className="max-w-[1728px] w-full mx-auto px-4 md:px-16 flex items-center justify-between">
 
             {/* Left Nav Links */}
@@ -128,7 +97,7 @@ export default function Header({ onOpenEnquiry }) {
           centered horizontally. Starts at top=0 so it overlaps the navy bar,
           matching the reference design exactly.
         */}
-        <div ref={logoRef} className="absolute top-0 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
           <a
             href="#home"
             className="flex flex-col items-center justify-center
