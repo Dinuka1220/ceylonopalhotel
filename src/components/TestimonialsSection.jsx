@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
                 </p>
             </div>
 
-            <div className="relative z-10 mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-10 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-16">
+            <div className="relative z-10 mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-10 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-16 sm:pl-15  xl:pl-2  pr-5 pl-5 md:pr-15">
                 {/* ---------------- Left: clickable name cards ---------------- */}
                 <div className="flex flex-col gap-4">
                     {REVIEWS.map((review) => {
@@ -117,13 +117,13 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* ---------------- Right: featured review ---------------- */}
-                <div className="relative flex flex-col justify-center">
+                <div className="relative flex flex-col justify-center pr-1 sm:pr-15  xl:pr-2">
                     {/* decorative testimonial image (top right) */}
                     <img
                         src={testimonialImg}
                         alt=""
                         aria-hidden="true"
-                        className="pointer-events-none absolute -right-2 -top-8 h-24 w-auto object-contain opacity-90 sm:h-32 lg:-right-4 lg:-top-10 lg:h-40"
+                        className="pointer-events-none absolute -right-2 -top-8 h-15 md:h-20    w-auto object-contain opacity-90 sm:h-32 lg:-right-4 lg:-top-10 lg:h-40"
                     />
 
                     <p className="relative font-[Poppins,sans-serif] text-sm font-semibold text-[#214169]">

@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function HeroSection({ onOpenEnquiry, onSelectImage }) {
   return (
-    <section id="home" className="relative  pt-[160px] md:pt-[175px] pb-28 md:pb-36 overflow-hidden min-h-screen lg:min-h-[118vh] max-h-screen">
+    <section id="home" className="relative  pt-[160px] md:pt-[175px] pb-28 md:pb-36 overflow-hidden lg:min-h-[118vh] lg:max-h-screen">
 
       <div className="max-w-[1728px]  mx-auto px-4 md:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 ">
@@ -37,24 +37,27 @@ export default function HeroSection({ onOpenEnquiry, onSelectImage }) {
               </button>
             </div>
 
-            <div className="relative z-10 grid grid-cols-[auto_1fr_auto] items-center gap-6 px-8 py-10 sm:px-1 sm:py-5">
-              {/* Col 1: big R */}
-              <span
-                className="select-none font-['Urbanist'] text-[110px] font-extrabold leading-none text-[#132742] sm:text-[150px]"
-                aria-hidden="true"
-              >
-                R
-              </span>
+            <div className="relative z-10 flex flex-col gap-4 sm:grid sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-6 px-4 sm:px-1 py-6 sm:py-5 max-w-full overflow-hidden">
+              {/* Col 1 + 2 wrapper: collapses on sm+ so grid takes over */}
+              <div className="flex items-center gap-2 sm:contents">
+                {/* Col 1: big R */}
+                <span
+                  className="select-none font-['Urbanist'] text-[70px] sm:text-[110px] font-extrabold leading-none text-[#132742] lg:text-[150px]"
+                  aria-hidden="true"
+                >
+                  R
+                </span>
 
-              {/* Col 2: stacked text */}
-              <div className="-ml-4 font-['Inter'] text-3xl font-bold leading-tight text-[#132742] sm:-ml-6 sm:text-[33px]">
-                <p>elax</p>
-                <p>echarge</p>
-                <p>efresh</p>
+                {/* Col 2: stacked text */}
+                <div className="-ml-2 font-['Inter'] text-xl sm:text-3xl font-bold leading-tight text-[#132742] sm:-ml-4 lg:-ml-6 lg:text-[33px]">
+                  <p>elax</p>
+                  <p>echarge</p>
+                  <p>efresh</p>
+                </div>
               </div>
 
               {/* Col 3: View Packages + arrow */}
-              <div className="flex items-center gap-4 justify-self-end">
+              <div className="flex items-center gap-4 sm:justify-self-end">
                 <a
                   href="#packages"
                   className="flex h-[40px] items-center justify-center whitespace-nowrap rounded-full bg-[#b08f5a] px-8 text-white font-semibold text-[#132742] shadow-md transition hover:-translate-y-0.5 hover:shadow-lg"
@@ -79,11 +82,11 @@ export default function HeroSection({ onOpenEnquiry, onSelectImage }) {
           </div>
 
           {/* RIGHT COLUMN: Arch Layout & Image Collages matching Figma */}
-          <div className="lg:col-span-7 relative pt-4 lg:pt-0">
+          <div className="lg:col-span-7 relative mt-8 lg:mt-0 lg:pt-0">
             <div className="grid grid-cols-12">
 
-              <div>
-                <div className="w-2xl overflow-hidden relative top-[-5rem]">
+              <div className="col-span-12">
+                <div className="w-full h-[280px] sm:h-[360px] md:h-[440px] lg:h-auto lg:w-2xl overflow-hidden relative top-0 lg:top-[-5rem]">
                   <img
                     src="/images/heromain.png"
                     alt="Iconic Luxury Villa Pool View"
