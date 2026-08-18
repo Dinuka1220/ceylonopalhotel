@@ -44,7 +44,7 @@ const socialLinks = [
 ];
 
 export default function ContactSection({
-    backgroundImage = "/images/whychooseusbg.jpg",
+    backgroundImage = "/images/contactbg.jpg",
     mapEmbedUrl = buildMapEmbedUrl("16D, Imaduwa, South, Galle, Sri Lanka"),
     onSubmit,
 }) {
