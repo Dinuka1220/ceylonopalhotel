@@ -6,7 +6,7 @@ import { Star, ChevronRight } from "lucide-react";
 import avatarShehani from "/images/girl.png";
 import avatarPalitha from "/images/tes2.png";
 import avatarLucas from "/images/tes3.png";
-import testimonialImg from "/images/tes2.png";
+import testimonialImg from "/images/testimonialimg.png";
 
 /**
  * TestimonialsSection
