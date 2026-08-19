@@ -11,7 +11,7 @@ export default function AboutUsSection({ onOpenEnquiry, onSelectImage }) {
         <img
           src="/images/aboutbottombrush.png"
           alt=""
-          className="w-full h-20 sm:h-28 md:h-36 object-cover mt-[8rem]"
+          className="w-full h-20 sm:h-28 md:h-36 object-cover mt-[5rem] xl:mt-[8rem]"
         />
       </div>
 

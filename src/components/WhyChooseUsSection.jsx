@@ -75,7 +75,7 @@ export default function WhyChooseUsSection({ onOpenEnquiry, onSelectImage }) {
       </div>
 
       {/* Paint Brush Edge Stroke Divider at bottom of Section 2 (_14-white-grunge-brush-stroke-13-1) */}
-      <div className="relative z-20 mt-8">
+      <div className="relative z-20 absolute bottom-0 left-0 w-full">
         <img
           src="/images/brushimg.png"
           alt=""

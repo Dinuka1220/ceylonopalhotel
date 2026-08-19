@@ -158,7 +158,7 @@ export default function OurFacilities({
       </div>
 
 
-      <div className="relative z-50  -mb-[4rem]   bottom-0">
+      <div className="relative z-50  -mb-[4rem]  xl:-mb-[rem]   bottom-0">
         <img
           src="/images/brushimg.png"
           alt="asdad"

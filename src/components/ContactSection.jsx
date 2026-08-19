@@ -121,12 +121,12 @@ export default function ContactSection({
                             </h3>
 
                             {/* Paragraph */}
-                            <p className="mt-3 text-xs leading-relaxed text-white/85 sm:text-sm sm:leading-relaxed  w-[20rem]">
+                            <p className="mt-3 text-xs leading-relaxed text-white/85 sm:text-sm sm:leading-relaxed  w-[13rem] md:w-full lg:w-[20rem]">
                                 Located in the beautiful coastal city of Galle, our hotel offers a peaceful stay surrounded by tropical scenery and the charm of southern Sri Lanka. Guests can easily explore the historic Galle Fort, beautiful beaches, local attractions, and nearby restaurants. Our hotel is an ideal place to enjoy your stay in Galle.
                             </p>
 
                             {/* Map Embed */}
-                            <div className="mt-5 overflow-hidden border border-white/20 shadow-md w-[20rem]">
+                            <div className="mt-5 overflow-hidden border border-white/20 shadow-md w-[13rem] lg:w-[20rem]">
                                 <iframe
                                     title="Hotel location map"
                                     src={mapEmbedUrl}

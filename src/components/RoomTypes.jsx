@@ -62,7 +62,7 @@ const RoomTypes = () => {
                     ))}
                 </div>
             </div>
-            <div className="relative z-20  -mb-[6rem]  mt-10 bottom-0">
+            <div className="relative z-20  -mb-[4rem]  md:-mb-[5rem] lg:-mb-[6rem]  xl:-mb-[6rem] mt-10 bottom-0">
                 <img
                     src="/images/gallerytopbrush.png"
                     alt=""

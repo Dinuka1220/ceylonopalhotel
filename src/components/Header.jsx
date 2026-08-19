@@ -20,7 +20,7 @@ export default function Header({ onOpenEnquiry }) {
           <div className="max-w-[1728px] w-full mx-auto flex items-center justify-between">
 
             {/* Left: Phone + Email */}
-            <div className="flex items-center gap-6 text-white/70 text-[13px] md:text-[15px] font-medium tracking-[0.05em]"
+            <div className="hidden lg:flex  items-center gap-6 text-white/70 text-[13px] md:text-[15px] font-medium tracking-[0.05em]"
               style={{ fontFamily: 'Urbanist, sans-serif' }}>
               <span className="flex items-center gap-2">
                 <Phone size={16} className="text-white/70 shrink-0" />
@@ -33,7 +33,7 @@ export default function Header({ onOpenEnquiry }) {
             </div>
 
             {/* Right: Social Icons — leave enough right padding for the badge area */}
-            <div className="flex items-center gap-5 text-white/70 pr-2">
+            <div className="hidden lg:flex  items-center gap-5 text-white/70 pr-2">
               <a href="#" aria-label="Facebook" className="hover:text-[#b08f5a] transition-colors">
                 <FacebookIcon className="w-[18px] h-[18px]" />
               </a>
@@ -53,7 +53,7 @@ export default function Header({ onOpenEnquiry }) {
           <div className="max-w-[1728px] w-full mx-auto px-4 md:px-16 flex items-center justify-between">
 
             {/* Left Nav Links */}
-            <nav className="hidden md:flex items-center gap-10 lg:gap-16 ml-[12rem]">
+            <nav className="hidden md:flex items-center gap-10 lg:gap-16 xl:ml-[10rem] ">
               <a href="#home"
                 className="font-['Josefin_Sans'] text-lg lg:text-md font-bold text-[#035186] hover:text-[#b08f5a] transition-colors">
                 Home
@@ -68,7 +68,7 @@ export default function Header({ onOpenEnquiry }) {
             <div className="hidden md:block w-[200px] lg:w-[294px]" />
 
             {/* Right Nav Links */}
-            <nav className="hidden md:flex items-center gap-10 lg:gap-16 mr-[12rem]">
+            <nav className="hidden md:flex items-center gap-10 lg:gap-16 lg:mr-[10rem] ">
               <a href="#gallery"
                 className="font-['Josefin_Sans'] text-lg lg:text-md font-bold text-black hover:text-[#b08f5a] transition-colors">
                 Gallery
