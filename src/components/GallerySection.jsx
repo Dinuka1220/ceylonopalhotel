@@ -66,7 +66,7 @@ export default function GallerySection({ images = defaultImages }) {
     const img = { ...defaultImages, ...images };
 
     return (
-        <section className="relative w-full overflow-hidden bg-[#CFC6AA] px-4 py-14 sm:px-8 sm:py-16 lg:px-16 lg:py-20">
+        <section id="gallery" className="relative w-full overflow-hidden bg-[#CFC6AA] px-4 py-14 sm:px-8 sm:py-16 lg:px-16 lg:py-20">
             {/* Heading */}
             <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-14 lg:mb-16">
                 <h2 className="font-['Urbanist',_sans-serif] text-3xl font-bold uppercase leading-tight tracking-tight text-[#132742] sm:text-4xl lg:text-5xl">

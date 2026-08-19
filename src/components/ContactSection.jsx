@@ -75,7 +75,7 @@ export default function ContactSection({
     };
 
     return (
-        <section className="relative w-full overflow-hidden bg-slate-900 py-12 sm:py-20 lg:py-24">
+        <section id="contact" className="relative w-full overflow-hidden bg-slate-900 py-12 sm:py-20 lg:py-24">
             {/* Background image */}
             <div className="absolute inset-0">
                 <img
