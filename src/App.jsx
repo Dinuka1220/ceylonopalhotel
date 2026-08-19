@@ -6,7 +6,7 @@ import FeatureRibbon from './components/FeatureRibbon';
 import WhyChooseUsSection from './components/WhyChooseUsSection';
 import AboutUsSection from './components/AboutUsSection';
 import EnquiryModal from './components/EnquiryModal';
-import ImageLightbox from './components/ImageLightbox';
+
 import { ArrowUp, Phone, Mail, MapPin, Trees } from 'lucide-react';
 import { FacebookIcon } from './components/SocialIcons';
 import OurFacilities from "./components/OurFacilities"
@@ -95,11 +95,7 @@ export default function App() {
         onClose={() => setIsEnquiryOpen(false)}
       />
 
-      {/* Lightbox Modal */}
-      <ImageLightbox
-        selectedImage={selectedImage}
-        onClose={handleCloseImage}
-      />
+
 
     </div>
   );
