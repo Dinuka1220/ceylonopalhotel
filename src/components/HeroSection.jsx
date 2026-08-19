@@ -37,7 +37,7 @@ export default function HeroSection({ onOpenEnquiry, onSelectImage }) {
               </button>
             </div>
 
-            <div className="relative z-10 flex flex-col gap-4 sm:grid sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-6 px-4 sm:px-1 py-6 sm:py-5 max-w-full overflow-hidden">
+            <div className="relative z-10 flex flex-col gap-4 sm:grid sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-6 px-0 md:px-4 sm:px-1 py-6 sm:py-5 max-w-full overflow-hidden">
               {/* Col 1 + 2 wrapper: collapses on sm+ so grid takes over */}
               <div className="flex items-center gap-2 sm:contents">
                 {/* Col 1: big R */}
@@ -82,11 +82,11 @@ export default function HeroSection({ onOpenEnquiry, onSelectImage }) {
           </div>
 
           {/* RIGHT COLUMN: Arch Layout & Image Collages matching Figma */}
-          <div className="lg:col-span-7 relative mt-8 lg:mt-0 lg:pt-0">
+          <div className="lg:col-span-7 relative mt-0  lg:mt-10 lg:mt-0 lg:pt-0">
             <div className="grid grid-cols-12">
 
               <div className="col-span-12">
-                <div className="w-full h-[280px] sm:h-[360px] md:h-[440px] lg:h-auto lg:w-2xl overflow-hidden relative top-0 lg:top-[-5rem]">
+                <div className="w-full h-[280px] sm:h-[360px] md:h-[440px] md:w-[34rem] md:ml-12 lg:ml-0 lg:w-[35rem] xl:w-auto lg:h-auto  lg:w-2xl overflow-hidden relative top-0 lg:top-[-5rem]">
                   <img
                     src="/images/heromain.png"
                     alt="Iconic Luxury Villa Pool View"

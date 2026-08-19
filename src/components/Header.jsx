@@ -20,7 +20,7 @@ export default function Header({ onOpenEnquiry }) {
           <div className="max-w-[1728px] w-full mx-auto flex items-center justify-between">
 
             {/* Left: Phone + Email */}
-            <div className="hidden lg:flex  items-center gap-6 text-white/70 text-[13px] md:text-[15px] font-medium tracking-[0.05em]"
+            <div className="hidden lg:flex  items-center gap-6 text-white/70 text-[13px] md:text-[15px]  lg:text-[11px] xl:text-[15px] font-medium tracking-[0.05em]"
               style={{ fontFamily: 'Urbanist, sans-serif' }}>
               <span className="flex items-center gap-2">
                 <Phone size={16} className="text-white/70 shrink-0" />
